@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkreact_homework_template=self.webpackChunkreact_homework_template||[]).push([[936],{4936:function(e,t,o){o.r(t),o.d(t,{default:function(){return n}});o(2791);var a={hom:"Home_hom__pmmBQ"},r=o(184);function n(){return(0,r.jsx)("div",{className:a.home,style:{backgroundImage:"url(https://kampot.org.ua/uploads/posts/1406196722_angel.jpg)",width:"100vw",height:"100vh",backgroundPosition:"center",backgroundSize:"cover",backgroundRepeat:"no-repeat"},children:"g"})}}}]);
+//# sourceMappingURL=936.8d0854ac.chunk.js.map
