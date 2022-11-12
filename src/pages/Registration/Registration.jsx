@@ -1,9 +1,10 @@
-// import { TextField } from '@mui/material';
-// import { Box } from '@mui/system';
-import { setRegisration } from 'helpers/api';
+import { TextField } from '@mui/material';
+import { Box } from '@mui/system';
+import Button from '@mui/material/Button';
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { authUsers } from 'redux/auth/auth-operation';
 import css from './Registration.module.css';
 
 export default function Registration() {
@@ -29,12 +30,70 @@ export default function Registration() {
       return alert(`Пароль не cпівпадає`);
     }
     const userData = { name, email, password };
-    dispatch(setRegisration(userData));
+    dispatch(authUsers(userData));
   };
 
   return (
     <div>
-      <form onSubmit={handelSubmit} className={css.form}>
+      <Box
+        onSubmit={handelSubmit}
+        className={css.form}
+        component="form"
+        sx={{
+          '& > :not(style)': { m: 1, width: '25ch' },
+        }}
+        noValidate
+        autoComplete="off"
+      >
+        <TextField
+          id="name"
+          variant="outlined"
+          label="Імʼя"
+          type="text"
+          value={name}
+          name="name"
+          placeholder="Імʼя"
+          onChange={handelChanche}
+        />
+        <TextField
+          id="email"
+          variant="outlined"
+          label="Електрона пошта"
+          type="email"
+          value={email}
+          placeholder="Електрона пошта"
+          name="email"
+          onChange={handelChanche}
+        />
+        <TextField
+          id="pasword"
+          variant="outlined"
+          label="Вигадайте пароль"
+          //   type="password"
+          type="text"
+          placeholder="Повторно ведіть пароль"
+          value={password}
+          name="password"
+          onChange={handelChanche}
+        />
+        <TextField
+          id="repidPas"
+          variant="outlined"
+          label="Підтепрдіть пароль"
+          //   type="password"
+          type="text"
+          placeholder="Повторно ведіть пароль"
+          value={repidPas}
+          name="repidPas"
+          onChange={handelChanche}
+        />
+        {/* // <button type="submit">Відправити</button> */}
+        <Button variant="contained" type="submit">
+          Відправити
+        </Button>
+      </Box>
+
+      {/* <form onSubmit={handelSubmit} className={css.form}>
         <label>
           <input
             type="text"
@@ -72,55 +131,8 @@ export default function Registration() {
           />
         </label>
 
-        <button type="submit">Відправити</button>
-      </form>
+        <button type="submit">Зареєструватися</button>
+      </form> */}
     </div>
   );
 }
-
-//   <Box
-//     onSubmit={handelSubmit}
-//     component="form"
-//     sx={{
-//       '& > :not(style)': { m: 1, width: '25ch' },
-//     }}
-//     noValidate
-//     autoComplete="off"
-//   >
-//     {/* <form className={css.form} onSubmit={handelSubmit}> */}
-//     <TextField
-//       id="name"
-//       label="Імʼя"
-//       variant="standard"
-//       type="text"
-//       //   value={name}
-//       name="name"
-//     />
-//     <TextField
-//       id="email"
-//       label="Електрона пошта"
-//       variant="filled"
-//       type="email"
-//        value={email}
-//       name="email"
-//     />
-//     <TextField
-//       id="pasword"
-//       label="Вигадайте пароль"
-//       variant="outlined"
-//       type="pasword"
-//       value={pasword}
-//       name="pasword"
-//     />
-//     <TextField
-//       id="repidPas"
-//       label="Підтвпрдіть пароль"
-//       variant="standard"
-//       type="pasword"
-//       value={repidPas}
-//       name="repidPas"
-//     />
-
-//     <button type="submit">Відправити</button>
-//     {/* </form> */}
-//   </Box>;

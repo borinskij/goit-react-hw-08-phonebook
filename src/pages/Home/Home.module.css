@@ -1,0 +1,10 @@
+.hom {
+  background-image: url('https://kampot.org.ua/uploads/posts/1406196722_angel.jpg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  /* backgroundPosition: center;
+        backgroundSize: cover;
+        backgroundRepeat: no-repeat;
+     */
+}
